@@ -27,7 +27,9 @@ implementation("com.zaxxer:HikariCP:5.0.1")
 # Jooq Integration code
 jooq {
     version.set("3.16.10")
+    
     configurations {
+    
         create("main") {  // name of the jOOQ configuration
             generateSchemaSourceOnCompilation.set(false)  // default (can be omitted)
 
