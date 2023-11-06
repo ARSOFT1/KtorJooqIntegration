@@ -1,25 +1,25 @@
 # KtorJooqIntegration
 
-In this project we will learn how to connect a Ktor application to MySQL database. In our case we will using  JOOQ to integrate with our database.
-We will use JOOQ plugin to generate database tables, pojos, daos etc.
+In this project we will learn how to connect with MySQL database using KTOR Framework.
+We will use JOOQ plugin to generate database tables, Pojos, Daos etc.
 
 Ktor is a framework to easily build connected applications – web applications, HTTP services, mobile and browser applications. Modern connected applications need to be asynchronous to provide the best experience to users, and Kotlin coroutines provide awesome facilities to do it in an easy and straightforward way.
+
 
 # jooq plugin to generate database
 id("nu.studer.jooq") version "7.1.1"
 
-Kotlin Gradle Dependencies:
+
+# Kotlin Gradle Dependencies:
 implementation("mysql:mysql-connector-java:8.0.30")
 implementation("org.jooq:jooq")
 jooqGenerator("mysql:mysql-connector-java:8.0.30")
 implementation("com.zaxxer:HikariCP:5.0.1")
 
+
 #  JDBC URL
 #  host : localhost, port : 3306, database : database_name
 "jdbc:mysql://localhost:3306/database_name?serverTimezone=UTC&characterEncoding=utf8"
-
-#  Driver Class Name
-"com.mysql.cj.jdbc.Driver"
 
 
 # Jooq Integration code
