@@ -20,6 +20,7 @@ implementation("com.zaxxer:HikariCP:5.0.1")
 
 #  JDBC URL
    host : localhost, port : 3306, database : database_name
+   
 "jdbc:mysql://localhost:3306/database_name?serverTimezone=UTC&characterEncoding=utf8"
 
 
