@@ -25,7 +25,9 @@ implementation("com.zaxxer:HikariCP:5.0.1")
 
 
 # Jooq Integration code
+
 jooq {
+
     version.set("3.16.10")
     
     configurations {
