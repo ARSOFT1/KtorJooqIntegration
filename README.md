@@ -10,8 +10,11 @@ Ktor is a framework to easily build connected applications – web applications,
 id("nu.studer.jooq") version "7.1.1"
 
 implementation("mysql:mysql-connector-java:8.0.30")
+
 implementation("org.jooq:jooq")
+
 jooqGenerator("mysql:mysql-connector-java:8.0.30")
+
 implementation("com.zaxxer:HikariCP:5.0.1")
 
 
