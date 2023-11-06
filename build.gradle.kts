@@ -36,13 +36,9 @@ dependencies {
     implementation("io.ktor:ktor-server-netty-jvm:$ktor_version")
     implementation("ch.qos.logback:logback-classic:$logback_version")
 
-    //dependencies related to jwt auth
-    implementation("io.ktor:ktor-server-auth:$ktor_version")
-    implementation("io.ktor:ktor-server-auth-jwt:$ktor_version")
-
     //dependencies related to database
-    implementation("mysql:mysql-connector-java:8.0.30")
-    implementation("org.jooq:jooq")
+    implementation("mysql:mysql-connector-java:8.0.33")
+    implementation("org.jooq:jooq:3.18.0")
     jooqGenerator("mysql:mysql-connector-java:8.0.30")
     implementation("com.zaxxer:HikariCP:5.0.1")
 
@@ -51,7 +47,6 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-core:0.41.1")
     implementation("org.jetbrains.exposed:exposed-dao:0.41.1")
     implementation("org.jetbrains.exposed:exposed-jdbc:0.41.1")
-    implementation("com.h2database:h2:2.1.214")
 
 
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")

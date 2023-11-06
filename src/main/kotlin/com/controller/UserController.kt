@@ -5,7 +5,7 @@ import com.model.UserModel
 import io.ktor.server.application.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
-import org.mindrot.jbcrypt.BCrypt
+
 
 class UserController(private val call: ApplicationCall) {
 
@@ -16,24 +16,11 @@ class UserController(private val call: ApplicationCall) {
         val password = param["password"] ?: error("user password required!")
         val userType = param["type"]?.let { UserUserType.valueOf(it) } ?: error("user type required!")
 
-        //Encrypt password
-        val hasPassword = BCrypt.hashpw(password, BCrypt.gensalt())
-
-        val response = UserModel.addNewUserToDb(name, email, hasPassword, userType)
+        val response = UserModel.addNewUserToDb(name, email, password, userType)
 
         call.respond(Response(success = true, data = response))
     }
 
-    // we will create method in user controller class
-
-    suspend fun loginUser(){
-        val param = call.parameters
-        val email = param["email"] ?: error("user email required!")
-        val password = param["password"] ?: error("user password required!")
-
-        val user = UserModel.getUserWithEmailPassword(email, password)
-        call.respond(Response(success = true, data = user))
-    }
     suspend fun getUserById(){
         val userId = call.parameters["id"]?.toIntOrNull() ?: error(message = "enter valid user id")
         val user = UserModel.getUserWithId(userId)
